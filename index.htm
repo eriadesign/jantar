@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jantar Exclusivo | Raul Sena</title>
+    <!-- Tailwind via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,51 +32,34 @@
     </script>
     <style>
         /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #FAFAFA; 
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #D1D5DB; 
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #601417; 
-        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #FAFAFA; }
+        ::-webkit-scrollbar-thumb { background: #D1D5DB; }
+        ::-webkit-scrollbar-thumb:hover { background: #601417; }
 
         /* Subtle Fade In Animation */
-        .fade-in {
-            animation: fadeIn 1.5s ease-in-out forwards;
-            opacity: 0;
-        }
+        .fade-in { animation: fadeIn 1.5s ease-in-out forwards; opacity: 0; }
         .delay-1 { animation-delay: 0.5s; }
-        .delay-2 { animation-delay: 1s; }
-        .delay-3 { animation-delay: 1.5s; }
-
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
-<body class="bg-stone-50 text-gray-600 font-sans antialiased overflow-x-hidden selection:bg-wine-800 selection:text-white">
+<body class="bg-[#fafaf9] text-gray-600 font-sans antialiased selection:bg-wine-800 selection:text-white overflow-x-hidden">
 
-    <!-- Navigation (Minimalist) -->
-    <nav class="absolute w-full z-50 top-0 py-6 px-6 md:px-8 flex justify-between items-center transition-all duration-300" id="navbar">
-        <img src="https://raw.githubusercontent.com/ProdutosAUVP/reviewdesign/main/olho-branco%20(2).svg" alt="AUVP" class="h-8 md:h-10 cursor-pointer object-contain">
+    <!-- Navigation -->
+    <nav class="absolute w-full z-50 top-0 left-0 py-6 px-6 md:px-8 flex justify-between items-center" id="navbar">
+        <img src="https://raw.githubusercontent.com/ProdutosAUVP/reviewdesign/main/olho-branco%20(2).svg" alt="AUVP" class="w-[45px] md:w-[70px] h-auto cursor-pointer object-contain">
     </nav>
 
-    <!-- Hero Section (Responsivo: O título agora faz quebra de linha em mobile) -->
-    <header class="relative h-[85vh] flex flex-col justify-end items-start text-left pb-12 md:pb-24 px-6 md:px-12 lg:px-24">
-        <!-- Background Image with Gray Overlay -->
-        <div class="absolute inset-0 z-0">
-            <img src="https://raw.githubusercontent.com/eriadesign/jantar/main/raul%20cozinhando%202.webp" alt="Raul a cozinhar" class="w-full h-full object-cover object-down" />
-            <div class="absolute inset-0 bg-gray-900/60"></div>
-        </div>
+    <!-- Hero Section (Dobra 1) -->
+    <header class="relative flex flex-col justify-end items-start text-left pb-12 md:pb-24 px-6 md:px-12 lg:px-24 w-full overflow-hidden min-h-[85vh] bg-gray-900">
+        <!-- Background Image com Opacidade -->
+        <img src="https://raw.githubusercontent.com/eriadesign/jantar/main/raul%20cozinhando%202.webp" alt="Raul a cozinhar" class="absolute inset-0 w-full h-full object-cover object-center opacity-40 z-0" />
 
-        <div class="relative z-10 w-full max-w-7xl mx-auto flex flex-col items-start overflow-hidden">
-            <h1 class="font-heading font-light tracking-[0.05em] text-4xl sm:text-5xl md:text-6xl text-white mb-6 fade-in leading-tight whitespace-normal md:whitespace-nowrap">
+        <div class="relative z-20 w-full max-w-7xl mx-auto flex flex-col items-start pt-32">
+            <h1 class="font-heading font-light tracking-[0.05em] text-4xl sm:text-5xl md:text-6xl text-white mb-6 fade-in leading-tight break-words whitespace-normal md:whitespace-nowrap">
                 JANTAR COM RAUL SENA
             </h1>
             
@@ -86,79 +70,79 @@
     </header>
 
     <!-- Section: Redistributed Info -->
-    <section class="py-12 md:py-16 bg-white">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <p class="uppercase tracking-[0.3em] text-wine-800 font-bold text-sm mb-4">Campanha de Junho</p>
+    <section class="py-12 md:py-24 flex flex-col items-center justify-center w-full relative z-20 bg-[#fafaf9]">
+        <div class="max-w-4xl w-full mx-auto px-6 text-center">
+            <p class="uppercase tracking-[0.3em] text-wine-800 font-bold text-xs md:text-sm mb-4">Campanha de Junho</p>
             <h2 class="font-heading font-light uppercase tracking-[0.05em] text-2xl md:text-4xl text-gray-900 mb-6">
                 Os 10 clientes de maior destaque
             </h2>
-            <p class="text-gray-600 text-base md:text-lg leading-relaxed font-light">
+            <p class="text-gray-600 text-base md:text-lg leading-relaxed font-light max-w-3xl mx-auto">
                 O reconhecimento por resultados excepcionais. Durante o mês de junho, os maiores aportadores garantirão seu lugar à mesa para um jantar exclusivo, preparado pessoalmente por <span class="font-bold text-wine-800">Raul Sena</span>.
             </p>
         </div>
     </section>
 
-    <!-- Section: The Atmosphere & The Chef (Responsivo: Imagem menor no topo em telemóveis) -->
-    <section class="flex flex-col md:flex-row items-stretch w-full overflow-hidden bg-white md:h-[600px] lg:h-[750px] max-h-[1000px]">
+    <!-- Section: The Atmosphere & The Chef (Dobra 2) -->
+    <section class="flex flex-col md:flex-row items-stretch w-full overflow-hidden relative z-20 bg-[#fafaf9]">
         
         <!-- Bloco da Imagem -->
-        <div class="w-full md:w-1/2 order-2 md:order-1 h-[300px] md:h-full relative">
+        <div class="w-full md:w-1/2 order-2 md:order-1 h-[350px] sm:h-[400px] md:h-auto md:min-h-[700px] relative shrink-0">
             <img src="https://raw.githubusercontent.com/eriadesign/jantar/main/raul%20cozinhando%201.webp" alt="Chef preparando prato" class="absolute inset-0 w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700" />
         </div>
         
         <!-- Bloco de Texto -->
-        <div class="w-full md:w-1/2 order-1 md:order-2 py-12 px-6 md:py-16 md:px-16 lg:px-24 flex flex-col justify-center">
-            <h2 class="font-heading font-light uppercase tracking-[0.05em] text-3xl md:text-4xl lg:text-5xl text-gray-900 mb-6">O Anfitrião e a<br><span class="text-wine-800">Experiência</span></h2>
+        <div class="w-full md:w-1/2 order-1 md:order-2 py-16 px-6 md:py-24 md:px-16 lg:px-24 flex flex-col justify-center">
+            <h2 class="font-heading font-light uppercase tracking-[0.05em] text-3xl md:text-4xl lg:text-5xl text-gray-900 mb-4 md:mb-6 break-words">O Anfitrião e a<br><span class="text-wine-800">Experiência</span></h2>
             <div class="h-px w-20 bg-wine-800 mb-6 md:mb-8"></div>
-            <p class="text-gray-600 leading-relaxed font-light mb-6 text-base md:text-lg">
+            <p class="text-gray-600 leading-relaxed font-light mb-6 text-sm md:text-lg">
                 Mais do que celebrar patrimônio, queremos celebrar parcerias sólidas. Para fechar o mês de junho de forma histórica, Raul Sena assumirá a cozinha em uma noite irrepetível.
             </p>
-            <p class="text-gray-600 leading-relaxed font-light mb-8 text-base md:text-lg">
+            <p class="text-gray-600 leading-relaxed font-light mb-4 md:mb-8 text-sm md:text-lg">
                 Esqueça os jantares corporativos tradicionais. Você desfrutará de uma alta gastronomia elaborada pelo próprio Raul, acompanhada de vinhos selecionados e conversas de altíssimo nível com as mentes por trás dos maiores resultados do mês.
             </p>
         </div>
 
     </section>
 
-    <!-- Section: The Mechanics (Responsivo: Ajuste da grelha e padding) -->
-    <section id="mecanica" class="py-16 md:py-24 bg-stone-50 relative">
+    <!-- Section: The Mechanics -->
+    <section id="mecanica" class="pt-12 pb-12 md:pt-24 md:pb-20 relative w-full z-20 bg-[#fafaf9]">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-12 md:mb-20">
-                <p class="uppercase tracking-[0.2em] text-wine-800 font-bold text-sm mb-4">Mecânica da Campanha</p>
-                <h2 class="font-heading font-light uppercase tracking-[0.05em] text-3xl md:text-5xl text-gray-900 mb-6">O Caminho até a Mesa</h2>
-                <p class="text-gray-600 font-light max-w-2xl mx-auto text-base md:text-lg">Apenas 10 lugares estão disponíveis. Durante todo o mês de junho, os aportes realizados definirão quem fará parte deste seleto grupo.</p>
+            <div class="text-center mb-10 md:mb-20">
+                <p class="uppercase tracking-[0.2em] text-wine-800 font-bold text-xs md:text-sm mb-4">Mecânica da Campanha</p>
+                <h2 class="font-heading font-light uppercase tracking-[0.05em] text-3xl md:text-5xl text-gray-900 mb-4 md:mb-6 break-words">O Caminho até a Mesa</h2>
+                <p class="text-gray-600 font-light max-w-2xl mx-auto text-sm md:text-lg">Apenas 10 lugares estão disponíveis. Durante todo o mês de junho, os aportes realizados definirão quem fará parte deste seleto grupo.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-16">
                 <!-- Mechanic 1: Top 5 -->
-                <div class="bg-white p-8 md:p-10 relative group border border-gray-100 hover:border-wine-800 shadow-sm transition duration-500 rounded-[5px]">
-                    <div class="absolute top-0 right-0 p-6 text-gray-100 group-hover:text-wine-800/10 transition duration-500">
+                <div class="bg-white p-6 md:p-10 relative group border border-gray-100 hover:border-wine-800 shadow-sm transition duration-500 rounded-[5px]">
+                    <div class="absolute top-0 right-0 p-4 md:p-6 text-gray-100 group-hover:text-wine-800/10 transition duration-500">
                         <span class="font-heading text-6xl md:text-8xl font-light tracking-[0.05em]">5</span>
                     </div>
                     <div class="relative z-10">
-                        <h3 class="font-heading font-light uppercase tracking-[0.05em] text-xl md:text-2xl text-gray-900 mb-4">O Top 5: Maior Volume</h3>
+                        <h3 class="font-heading font-light uppercase tracking-[0.05em] text-xl md:text-2xl text-gray-900 mb-4 pr-10 break-words">O Top 5: Maior Volume</h3>
                         <p class="text-gray-600 font-light leading-relaxed mb-6 text-sm md:text-base">
                             O topo tem seus privilégios. Os 5 clientes que realizarem o maior volume de aportes líquidos (NNM) durante o período da campanha terão seus lugares garantidos à mesa com Raul.
                         </p>
-                        <div class="pt-6 border-t border-gray-100 flex items-center justify-between">
-                            <span class="text-xs uppercase tracking-widest font-bold text-wine-800">Critério:</span>
+                        <div class="pt-5 md:pt-6 border-t border-gray-100 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                            <span class="text-[10px] md:text-xs uppercase tracking-widest font-bold text-wine-800">Critério:</span>
                             <span class="text-xs md:text-sm text-gray-500 italic">Maior NNM em Junho</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Mechanic 2: Os Obstinados -->
-                <div class="bg-white p-8 md:p-10 relative group border border-gray-100 hover:border-wine-800 shadow-sm transition duration-500 rounded-[5px]">
-                    <div class="absolute top-0 right-0 p-6 text-gray-100 group-hover:text-wine-800/10 transition duration-500">
+                <div class="bg-white p-6 md:p-10 relative group border border-gray-100 hover:border-wine-800 shadow-sm transition duration-500 rounded-[5px]">
+                    <div class="absolute top-0 right-0 p-4 md:p-6 text-gray-100 group-hover:text-wine-800/10 transition duration-500">
                         <span class="font-heading text-6xl md:text-8xl font-light tracking-[0.05em]">5</span>
                     </div>
                     <div class="relative z-10">
-                        <h3 class="font-heading font-light uppercase tracking-[0.05em] text-xl md:text-2xl text-gray-900 mb-4">Os Obstinados: O Legado</h3>
+                        <h3 class="font-heading font-light uppercase tracking-[0.05em] text-xl md:text-2xl text-gray-900 mb-4 pr-10 break-words">Os Obstinados: O Legado</h3>
                         <p class="text-gray-600 font-light leading-relaxed mb-6 text-sm md:text-base">
                             Uma homenagem a quem confiou em nós desde o início. Serão sorteadas 5 vagas exclusivas para clientes da época da IsaEx que realizarem aportes qualificáveis.
                         </p>
-                        <div class="pt-6 border-t border-gray-100 flex items-center justify-between">
-                            <span class="text-xs uppercase tracking-widest font-bold text-wine-800">Critério:</span>
+                        <div class="pt-5 md:pt-6 border-t border-gray-100 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                            <span class="text-[10px] md:text-xs uppercase tracking-widest font-bold text-wine-800">Critério:</span>
                             <span class="text-xs md:text-sm text-gray-500 italic">NNM > R$10 mil em Junho</span>
                         </div>
                     </div>
@@ -167,45 +151,62 @@
         </div>
     </section>
 
-    <!-- Section: The Invite Details -->
-    <section class="flex flex-col md:flex-row items-stretch w-full overflow-hidden bg-white border-t border-gray-100">
-        
-        <!-- Bloco de Texto e Convite (Esquerda) -->
-        <div class="w-full md:w-1/2 order-2 md:order-1 py-12 px-6 md:py-24 md:px-16 lg:px-24 flex flex-col justify-center items-center md:items-start text-center md:text-left">
-            <h2 class="font-heading font-light uppercase tracking-[0.05em] text-3xl md:text-5xl text-gray-900 mb-8 md:mb-12">O Convite Oficial</h2>
+    <!-- Faixa Horizontal de Regras (Linhas removidas) -->
+    <section class="w-full bg-[#fafaf9] py-12 md:py-16 relative z-20">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12">
+            <!-- Título da Faixa -->
+            <div class="w-full md:w-1/3 flex-shrink-0 text-center md:text-left">
+                <h3 class="font-heading font-bold uppercase tracking-[0.1em] text-sm md:text-base text-wine-800 mb-4 md:mb-2">Regras da Campanha</h3>
+                <div class="h-px w-12 bg-wine-800/30 mx-auto md:mx-0 hidden md:block"></div>
+            </div>
             
-            <div class="bg-stone-50 p-6 md:p-12 rounded-[5px] border border-gray-200 shadow-sm relative overflow-hidden w-full max-w-lg">
-                <!-- Decorative corners -->
-                <div class="absolute top-0 left-0 w-6 h-6 md:w-8 md:h-8 border-t border-l border-wine-800/30"></div>
-                <div class="absolute top-0 right-0 w-6 h-6 md:w-8 md:h-8 border-t border-r border-wine-800/30"></div>
-                <div class="absolute bottom-0 left-0 w-6 h-6 md:w-8 md:h-8 border-b border-l border-wine-800/30"></div>
-                <div class="absolute bottom-0 right-0 w-6 h-6 md:w-8 md:h-8 border-b border-r border-wine-800/30"></div>
+            <!-- Conteúdo das Regras -->
+            <div class="w-full md:w-2/3 text-left">
+                <ul class="text-gray-600 text-sm md:text-base font-light space-y-4 list-disc list-inside marker:text-wine-800/50">
+                    <li>O período válido para aporte será de 1º a 30 de junho.</li>
+                    <li class="font-bold text-wine-800 text-base md:text-lg">A premiação não inclui passagem, hospedagem ou qualquer outro custo de deslocamento.</li>
+                    <li>A data do jantar ainda será definida e comunicada posteriormente.</li>
+                    <li>A participação ocorre automaticamente conforme os aportes realizados dentro do período da campanha.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-                <div class="space-y-6 md:space-y-8 text-center md:text-left">
+    <!-- Section: The Invite Details -->
+    <section class="pt-16 pb-16 md:pt-24 md:pb-32 flex flex-col items-center justify-center w-full relative z-20 bg-[#fafaf9]">
+        
+        <!-- Bloco de Texto e Convite -->
+        <div class="w-full px-6 flex flex-col justify-center items-center text-center">
+            <h2 class="font-heading font-light uppercase tracking-[0.05em] text-3xl md:text-5xl text-gray-900 mb-8 md:mb-12 break-words">O Convite Oficial</h2>
+            
+            <div class="p-6 md:p-12 rounded-[5px] border border-gray-200 shadow-sm relative overflow-hidden w-full max-w-lg bg-white">
+                <!-- Decorative corners -->
+                <div class="absolute top-0 left-0 w-4 h-4 md:w-8 md:h-8 border-t border-l border-wine-800/30"></div>
+                <div class="absolute top-0 right-0 w-4 h-4 md:w-8 md:h-8 border-t border-r border-wine-800/30"></div>
+                <div class="absolute bottom-0 left-0 w-4 h-4 md:w-8 md:h-8 border-b border-l border-wine-800/30"></div>
+                <div class="absolute bottom-0 right-0 w-4 h-4 md:w-8 md:h-8 border-b border-r border-wine-800/30"></div>
+
+                <div class="space-y-6 md:space-y-8 text-left relative z-10">
                     <div>
                         <p class="text-[10px] md:text-xs uppercase tracking-[0.2em] text-gray-500 mb-2">Período de Apuração</p>
-                        <p class="font-heading font-light uppercase tracking-[0.05em] text-xl md:text-2xl text-gray-900">01 a 30 de Junho<br><span class="text-wine-800 text-lg md:text-xl font-normal lowercase tracking-normal">Aportes Líquidos (NNM)</span></p>
+                        <p class="font-heading font-light uppercase tracking-[0.05em] text-2xl md:text-3xl text-gray-900">01 a 30 de Junho<br><span class="text-wine-800 text-lg md:text-xl font-normal lowercase tracking-normal break-words">aportes líquidos (nnm)</span></p>
                     </div>
                     <div>
                         <p class="text-[10px] md:text-xs uppercase tracking-[0.2em] text-gray-500 mb-2">O Evento</p>
-                        <p class="font-heading font-light uppercase tracking-[0.05em] text-xl md:text-2xl text-gray-900">Jantar Exclusivo<br><span class="text-xs md:text-sm font-sans font-light text-gray-500 uppercase tracking-widest mt-1 block">Local Secreto</span></p>
+                        <p class="font-heading font-light uppercase tracking-[0.05em] text-2xl md:text-3xl text-gray-900">Jantar Exclusivo<br><span class="text-xs md:text-sm font-sans font-light text-gray-500 uppercase tracking-widest mt-1 block">Local Secreto</span></p>
                         <p class="text-[10px] md:text-xs text-gray-400 mt-3 italic">*A data e o local exato serão informados privadamente aos 10 vencedores.</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Bloco da Imagem (Direita) -->
-        <div class="w-full md:w-1/2 order-1 md:order-2 h-[300px] md:h-auto relative">
-            <img src="https://raw.githubusercontent.com/eriadesign/jantar/main/rual%20e%20amigos.webp" alt="Raul e convidados" class="absolute inset-0 w-full h-full object-cover" />
-        </div>
-
     </section>
 
     <!-- Scripts -->
     <script>
-        // Initialize Lucide Icons
-        lucide.createIcons();
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
     </script>
 </body>
 </html>
